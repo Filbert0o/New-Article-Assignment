@@ -1,0 +1,17 @@
+<h1>Article</h1>
+
+<div class="articles">
+  <ol>
+    <% @articles.each do |article| %>
+      <li>
+        Title: <%= article["title"] %> <br>
+        URL: <a href="<%= article['url'] %>"><%= article["url"] %></a> <br>
+        Description: <%= article['description'] %> <br>
+      </li>
+    <% end %>
+  </ol>
+</div>
+
+<div>
+  <a href="/articles/new">Create An Article!</a>
+</div>

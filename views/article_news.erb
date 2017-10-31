@@ -1,0 +1,32 @@
+<header>
+  <a href="/articles"><----Go Back To Articles</a>
+</header>
+
+<h3>
+  <% if @error %>
+      <%= @error %>
+  <% end %>
+</h3>
+
+<h3>
+  <% if !@message.nil? %>
+    <%= @message %>
+  <% end %>
+</h3>
+
+<div>
+
+  <form action="/articles/new" method="post">
+    <label for="title">Title:</label>
+    <input type="text" name="title" value="<%= @title %>" id="title">
+    <br>
+    <label for="url">URL:</label>
+    <input type="text" name="url" value="<%= @url %>" id="url">
+    <br>
+    <label for="description">Description:</label>
+    <textarea rows="10" cols="40" type="text" name="description" value="<%= @description %>" id="description"></textarea>
+
+    <br>
+    <input type="submit">
+  </form>
+</div>
